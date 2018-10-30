@@ -8,5 +8,23 @@ namespace LemonadeStand
 {
     class Day
     {
+        public string Day1;
+        public string Day2;
+        public string Day3;
+        public string Day4; 
+        public string Day5;
+        public string Day6;
+        public string Day7;
+
+
+
+
+
+
+
+
+
+
+
     }
 }

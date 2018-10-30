@@ -11,6 +11,8 @@ namespace LemonadeStand
         public double money = 50;
         public int profit;
         public Player player;
+        public Store store;
+       
 
 
 

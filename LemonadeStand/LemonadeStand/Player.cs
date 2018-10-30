@@ -11,15 +11,9 @@ namespace LemonadeStand
         // member variables
         public Inventory inventory = new Inventory();
         public double money = 50;
+
+
         // constructor
-
-
-
-
-
-
-
-
 
 
 

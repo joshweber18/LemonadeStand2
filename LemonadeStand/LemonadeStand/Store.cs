@@ -15,28 +15,30 @@ namespace LemonadeStand
         public double IceCubes = .5;
         public double Cups = .2;
         public double Lemons = .10;
-        public double boughtCupsOfSugar;
-        public double boughtIceCubes;
-        public double boughtLemons;
-        public double boughtCups;
+        private double boughtCupsOfSugar;
+        private double boughtIceCubes;
+        private double boughtLemons;
+        private double boughtCups;
 
         public List<string> MenuOptions = new List<string>();
+
         //constructor
 
         // member methods
 
 
-        private void Menu()
+        public void Menu()
         {
             Console.WriteLine("Here are today's prices!");
             MenuOptions.Add("Sugar: .10 per cup.");
             MenuOptions.Add("Ice Cubes: .5 per ice cube.");
             MenuOptions.Add("Lemons: .10 per lemon.");
             MenuOptions.Add("Cups: .2 per cup.");
+
         }
 
 
-        private void BuyCupsOfSugar(Player player)
+        public void BuyCupsOfSugar(Player player)
         {
             Console.WriteLine("How many cups of sugar would you like to buy?");
             boughtCupsOfSugar = double.Parse(Console.ReadLine());
@@ -48,7 +50,6 @@ namespace LemonadeStand
             }
             else 
             {
-               
                 Console.WriteLine("You do not have enough money.");
             }
 
@@ -58,7 +59,7 @@ namespace LemonadeStand
             }
         }
 
-        private void BuyIceCubes(Player player)
+        public void BuyIceCubes(Player player)
         {
             Console.WriteLine("How many ice cubes would you like to buy? ");
             boughtIceCubes = int.Parse(Console.ReadLine());
@@ -79,7 +80,7 @@ namespace LemonadeStand
             }
         }
 
-        private void BuyLemons(Player player)
+        public void BuyLemons(Player player)
         {
             Console.WriteLine("How many lemons would you like to buy?");
             boughtLemons = int.Parse(Console.ReadLine());
@@ -100,7 +101,7 @@ namespace LemonadeStand
             }
         }
             
-        private void BuyCups(Player player)
+        public void BuyCups(Player player)
         {
             Console.WriteLine("How many cups would you like to buy?");
             boughtCups = int.Parse(Console.ReadLine());

@@ -11,34 +11,34 @@ namespace LemonadeStand
         // member variables
         public Inventory inventory = new Inventory();
         public double money = 50;
-
+        public Recipe recipe;
 
         // constructor
 
 
-
+        
 
 
         // memeber methods 
-        public void GetCupsofSugar()
+        public int GetCupsofSugar()
         {
-
+            return inventory.AmountSugar();
         }
 
 
-        public void GetIceCubes()
+        public int GetIceCubes()
         {
-
+            return inventory.AmountIceCubes();
         }
 
-        public void GetLemons()
+        public int GetLemons()
         {
-
+            return inventory.AmountLemons();
         }
 
-        public void GetCups()
+        public int GetCups()
         {
-
+            return inventory.AmountCups();
         }
 
 

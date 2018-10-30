@@ -41,6 +41,13 @@ namespace LemonadeStand
                     temperatureCondition = r.Next(40, 55);
                     break;
             }
+
+
+            public void DisplayWeather()
+            {
+                Console.WriteLine("Temperature: " + temperatureCondition + " ");
+                Console.WriteLine("Weather: " + weatherCondition + " ");
+            }
         }     
     }
 }

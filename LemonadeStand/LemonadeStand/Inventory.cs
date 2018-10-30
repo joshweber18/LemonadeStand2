@@ -19,10 +19,34 @@ namespace LemonadeStand
 
         // member methods
 
-        
-        
 
-        public void 
+        public int AmountSugar()
+        {
+            Console.WriteLine("You have " + CupsOfSugar + " cups of sugar.");
+            return CupsOfSugar;
+        }
+
+        public int AmountIceCubes()
+        {
+            Console.WriteLine("You have " + IceCubes + " ice cubes.");
+            return IceCubes;
+        }
+
+        public int AmountLemons()
+        {
+            Console.WriteLine("You have " + Lemons + " lemons.");
+            return Lemons;
+        }
+
+        public int AmountCups()
+        {
+            Console.WriteLine("You have " + Cups + " cups.");
+            return Cups;
+        }
+            
+
+
+
 
 
 

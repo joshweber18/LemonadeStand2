@@ -32,10 +32,12 @@ namespace LemonadeStand
             double price = boughtCupsOfSugar * CupsOfSugar;
             if (price <= player.money)
             {
+                player.inventory.CupsOfSugar += Convert.ToInt32(boughtCupsOfSugar);
                 player.money -= price;
             }
             else 
             {
+               
                 Console.WriteLine("You do not have enough money.");
             }
 
@@ -52,6 +54,7 @@ namespace LemonadeStand
             double price = boughtIceCubes * IceCubes;
             if (price <= player.money)
             {
+                player.inventory.IceCubes += Convert.ToInt32(boughtIceCubes);
                 player.money -= price;
             }
             else
@@ -72,6 +75,7 @@ namespace LemonadeStand
             double price = boughtLemons * Lemons;
             if (price <= player.money)
             {
+                player.inventory.Lemons += Convert.ToInt32(boughtLemons);
                 player.money -= price;
             }
             else
@@ -92,6 +96,7 @@ namespace LemonadeStand
             double price = boughtCups * Cups;
             if (price <= player.money)
             {
+                player.inventory.Cups += Convert.ToInt32(boughtCups);
                 player.money -= price;
             }
             else 

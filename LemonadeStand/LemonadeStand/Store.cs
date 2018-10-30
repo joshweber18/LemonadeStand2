@@ -26,67 +26,64 @@ namespace LemonadeStand
         // member methods
 
 
-        private void BuyCupsOfSugar(Player player)
+        private void buycupsofsugar(Player player)
         {
             Console.WriteLine("How many cups of sugar would you like to buy?");
             BoughtCupsOfSugar = double.Parse(Console.ReadLine());
-            double x = BoughtCupsOfSugar * CupsOfSugar;
-            if (x <= player.money)
+            double price = BoughtCupsOfSugar * CupsOfSugar;
+            if (price <= player.money)
             {
-                player.money -= x;
+                player.money -= price;
             }
-            else if () 
+            else 
                 {
                 Console.WriteLine("You do not have enough money.");
                 }
-
         }
 
-        private void BuyIceCubes(Player player)
+        private void buyicecubes(Player player)
         {
             Console.WriteLine("How many ice cubes would you like to buy? ");
             BoughtIceCubes = int.Parse(Console.ReadLine());
-            double x = BoughtIceCubes * IceCubes;
-            if (x <= player.money)
+            double price = BoughtIceCubes * IceCubes;
+            if (price <= player.money)
             {
-                player.money -= x;
+                player.money -= price;
             }
-            else if ()
+            else
             {
                 Console.WriteLine("You do not have enough money.");
             }
         }
 
-        private void BuyLemons(Player player)
+        private void buylemons(Player player)
         {
             Console.WriteLine("How many lemons would you like to buy?");
             BoughtLemons = int.Parse(Console.ReadLine());
-            double x = BoughtLemons * Lemons;
-            if (x <= player.money)
+            double price = BoughtLemons * Lemons;
+            if (price <= player.money)
             {
-                player.money -= x;
+                player.money -= price;
             }
-            else if ()
+            else
             {
                 Console.WriteLine("You do not have enough money.");
             }
-
         }
             
-        private void BuyCups(Player player)
+        private void buycups(Player player)
         {
             Console.WriteLine("How many cups would you like to buy?");
             BoughtCups = int.Parse(Console.ReadLine());
-            double x = BoughtCups * Cups;
-            if (x <= player.money)
+            double price = BoughtCups * Cups;
+            if (price <= player.money)
             {
-                player.money -= x;
+                player.money -= price;
             }
-            else if ()
+            else 
             {
                 Console.WriteLine("You do not have enough money.");
             }
         }
-
     }
 }

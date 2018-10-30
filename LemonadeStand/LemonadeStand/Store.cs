@@ -12,7 +12,7 @@ namespace LemonadeStand
         // member variables 
 
         public double CupsOfSugar = .10;
-        public double IceCubes = .10;
+        public double IceCubes = .5;
         public double Cups = .2;
         public double Lemons = .10;
         public double boughtCupsOfSugar;
@@ -20,10 +20,21 @@ namespace LemonadeStand
         public double boughtLemons;
         public double boughtCups;
 
-
+        public List<string> MenuOptions = new List<string>();
         //constructor
 
         // member methods
+
+
+        private void Menu()
+        {
+            Console.WriteLine("Here are today's prices!");
+            MenuOptions.Add("Sugar: .10 per cup.");
+            MenuOptions.Add("Ice Cubes: .5 per ice cube.");
+            MenuOptions.Add("Lemons: .10 per lemon.");
+            MenuOptions.Add("Cups: .2 per cup.");
+        }
+
 
         private void BuyCupsOfSugar(Player player)
         {

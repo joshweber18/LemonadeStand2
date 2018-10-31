@@ -18,7 +18,7 @@ namespace LemonadeStand
         int currentDay = 1;
 
         // constructor
-        public Game()
+        public Game(Player player)
         {
             Console.WriteLine("Welcome to Lemonade Stand!");
             Console.WriteLine("Press (1) to go to the store. Press (2) to create recipe. Press (3) to check inventory.");
@@ -26,7 +26,7 @@ namespace LemonadeStand
             switch (input)
             {
                 case 1:
-                    store.Menu();
+                    store.Menu(player);
                     break;
                 case 2:
                     player.recipe.createRecipe();

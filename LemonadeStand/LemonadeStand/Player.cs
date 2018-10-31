@@ -10,7 +10,6 @@ namespace LemonadeStand
     {
         // member variables
         public Inventory inventory = new Inventory();
-        // public double money = 50;
         public Recipe recipe = new Recipe();
         public Wallet wallet = new Wallet();
 
@@ -25,7 +24,6 @@ namespace LemonadeStand
         { 
             return inventory.AmountSugar();
         }
-
 
         public int GetIceCubes()
         {

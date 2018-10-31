@@ -29,7 +29,7 @@ namespace LemonadeStand
                     store.Menu(player);
                     break;
                 case 2:
-                    player.recipe.createRecipe();
+                    player.recipe.CreateRecipe();
                     break;
                 case 3:
                     player.inventory.AmountSugar();

@@ -10,8 +10,9 @@ namespace LemonadeStand
     {
         // member variables
         public Inventory inventory = new Inventory();
-        public double money = 50;
-        public Recipe recipe;
+        // public double money = 50;
+        public Recipe recipe = new Recipe();
+        public Wallet wallet = new Wallet();
 
         // constructor
 
@@ -21,7 +22,7 @@ namespace LemonadeStand
 
         // memeber methods 
         public int GetCupsofSugar()
-        {
+        { 
             return inventory.AmountSugar();
         }
 

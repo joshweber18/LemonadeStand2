@@ -49,6 +49,7 @@ namespace LemonadeStand
             else 
             {
                 Console.WriteLine("You do not have enough money.");
+                BuyIceCubes(player);
             }
 
             if (boughtCupsOfSugar == 0)
@@ -70,6 +71,7 @@ namespace LemonadeStand
             else
             {
                 Console.WriteLine("You do not have enough money.");
+                BuyLemons(player);
             }
 
             if (boughtIceCubes == 0)
@@ -91,6 +93,7 @@ namespace LemonadeStand
             else
             {
                 Console.WriteLine("You do not have enough money.");
+                BuyCups(player);
             }
 
             if (boughtLemons == 0)
@@ -116,7 +119,6 @@ namespace LemonadeStand
 
             if (boughtCups == 0)
             {
-                
               
             }
         }

@@ -17,13 +17,13 @@ namespace LemonadeStand
         public Weather()
         {
             weatherOptions.Add("Rainy");
-            weatherOptions.Add("Sunny");
-            weatherOptions.Add("Foggy");
+            weatherOptions.Add("Partially Sunny");
+            weatherOptions.Add("Hot");
             weatherOptions.Add("Overcast");
             ChooseWeather();
         }
 
-        public void ChooseWeather()
+        public string ChooseWeather()
         {
             Random r = new Random();
             int randomNumber = r.Next(weatherOptions.Count);
@@ -44,6 +44,7 @@ namespace LemonadeStand
                     temperatureCondition = r.Next(40, 55);
                     break;
             }
+            return weatherCondition;
         }
             
 

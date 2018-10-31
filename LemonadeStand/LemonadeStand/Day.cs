@@ -18,13 +18,14 @@ namespace LemonadeStand
 
         Random random = new Random();
         Customer customer = new Customer();
+        Weather weather = new Weather();
 
         public void Customers()
         {
             int amountCustomers = random.Next(60, 110);
             int i = 0;
             while (i < amountCustomers) ;
-            customer.ChoiceToBuy();
+            customer.ChoosingToBuy();
             i++;
         }
     }

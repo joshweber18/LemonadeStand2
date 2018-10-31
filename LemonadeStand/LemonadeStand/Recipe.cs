@@ -11,7 +11,7 @@ namespace LemonadeStand
         private int sugar;
         private int lemons;
         private int ice;
-        private int cups;
+        private int cup;
 
         public Recipe()
         {
@@ -46,6 +46,11 @@ namespace LemonadeStand
             ice = Convert.ToInt32(Console.ReadLine());
         }
 
+        private void CostCup()
+        {
+            Console.WriteLine("Please set amount for one cup of lemonade.");
+            cup = Convert.ToInt32(Console.ReadLine());
+        }
         private void ShowRecipe()
         {
             Console.WriteLine("Let's take a look at your recipe! You have lemons: " + lemons + " cups of sugar: " + sugar +" and " + ice +" ice cubes per pitcher.");

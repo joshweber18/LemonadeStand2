@@ -16,15 +16,16 @@ namespace LemonadeStand
         public string Day6;
         public string Day7;
 
+        Random random = new Random();
+        Customer customer = new Customer();
 
-
-
-
-
-
-        public void 
-
-
-
+        public void Customers()
+        {
+            int amountCustomers = random.Next(60, 110);
+            int i = 0;
+            while (i < amountCustomers) ;
+            customer.ChoiceToBuy();
+            i++;
+        }
     }
 }

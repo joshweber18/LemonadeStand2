@@ -13,19 +13,22 @@ namespace LemonadeStand
         public List<string> weatherOptions = new List<string>();
         // public Dictionary<string, string> weatherTemperatureOptions = new Dictionary<string, string>();
 
-        public void chooseWeather()
+
+        public Weather()
+        {
+            weatherOptions.Add("Rainy");
+            weatherOptions.Add("Sunny");
+            weatherOptions.Add("Foggy");
+            weatherOptions.Add("Overcast");
+            ChooseWeather();
+        }
+
+        public void ChooseWeather()
         {
             Random r = new Random();
             int randomNumber = r.Next(weatherOptions.Count);
 
-            public Weather()
-            {
-                weatherOptions.Add("Rainy");
-                weatherOptions.Add("Sunny");
-                weatherOptions.Add("Foggy");
-                weatherOptions.Add("Overcast");
-                weatherCondition = weatherOptions[r.Next(0, weatherOptions.Count)];
-            }
+            weatherCondition = weatherOptions[r.Next(0, weatherOptions.Count)];
             switch (weatherCondition)
             {
                 case "Rainy":
@@ -41,13 +44,14 @@ namespace LemonadeStand
                     temperatureCondition = r.Next(40, 55);
                     break;
             }
+        }
+            
 
 
-            public void DisplayWeather()
-            {
-                Console.WriteLine("Temperature: " + temperatureCondition + " ");
-                Console.WriteLine("Weather: " + weatherCondition + " ");
-            }
-        }     
-    }
+        public void DisplayWeather()
+        {
+            Console.WriteLine("Temperature: " + temperatureCondition + " ");
+            Console.WriteLine("Weather: " + weatherCondition + " ");
+        }
+    }     
 }

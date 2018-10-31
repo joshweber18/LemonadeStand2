@@ -10,7 +10,7 @@ namespace LemonadeStand
     {
 
         // member variables 
-
+        public Game game;
         public double CupsOfSugar = .10;
         public double IceCubes = .5;
         public double Cups = .2;
@@ -27,14 +27,15 @@ namespace LemonadeStand
         // member methods
 
 
-        public void Menu()
+        public void Menu(Game game)
         {
+            this.game = game;
             Console.WriteLine("Here are today's prices!");
             MenuOptions.Add("Sugar: .10 per cup.");
             MenuOptions.Add("Ice Cubes: .5 per ice cube.");
             MenuOptions.Add("Lemons: .10 per lemon.");
             MenuOptions.Add("Cups: .2 per cup.");
-
+            BuyCupsOfSugar(player);
         }
 
 
@@ -119,6 +120,7 @@ namespace LemonadeStand
             if (boughtCups == 0)
             {
                 
+              
             }
         }
     }

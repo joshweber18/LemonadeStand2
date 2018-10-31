@@ -8,11 +8,16 @@ namespace LemonadeStand
 {
     class Game
     {
+        // member variables
+
         public double money = 50;
         public int profit;
         public Player player = new Player();
         public Store store = new Store();
-       
+        public Day day = new Day();
+        int currentDay = 1;
+
+        // constructor
         public Game()
         {
             Console.WriteLine("Welcome to Lemonade Stand!");
@@ -35,9 +40,13 @@ namespace LemonadeStand
             }
         }
 
+        // member methods
 
 
+        public void StartGame()
+        {
 
+        }
 
 
 

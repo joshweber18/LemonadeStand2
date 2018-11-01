@@ -23,7 +23,7 @@ namespace LemonadeStand
         }
 
         // member methods
-        public int RandomNumberCustomer()
+        public int GetNumberOfCustomers()
         {
             Random random = new Random();
             randomCustomerNumber = random.Next(60, 110);
@@ -32,7 +32,7 @@ namespace LemonadeStand
 
         public void Customers()
         {
-            RandomNumberCustomer();
+            GetNumberOfCustomers();
             for (int i = 0; i < randomCustomerNumber; i++)
             {
                 customer = new Customer();

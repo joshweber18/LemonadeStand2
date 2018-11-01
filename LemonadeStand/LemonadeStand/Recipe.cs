@@ -52,8 +52,19 @@ namespace LemonadeStand
         {
             Console.WriteLine("Please set amount for one cup of lemonade.");
             cup = double.Parse(Console.ReadLine());
-            return cup;
+            if (cup >= 0.01 && cup <= 1.00)
+            { 
+                return cup;
+            }
+
+            else
+            {
+                Console.WriteLine("Invalid input, please enter amount between 0.01 and $1.00");
+                CostCup();
+            }
         }
+
+
         public void ShowRecipe()
         {
             Console.WriteLine("Let's take a look at your recipe! You have lemons: " + lemons + " cups of sugar: " + sugar +" and " + ice +" ice cubes per pitcher.");

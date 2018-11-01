@@ -97,7 +97,7 @@ namespace LemonadeStand
 
         public bool CheckValidAmountSugar()
         {
-            if (CupsOfSugar >= player.recipe.lemons)
+            if (CupsOfSugar >= player.recipe.sugar)
             {
                 Console.WriteLine("You do not have enough sugar to make lemonade.");
                 return false;
@@ -109,6 +109,48 @@ namespace LemonadeStand
             }
         }
 
+        public bool CheckValidAmountLemons()
+        {
+            if (Lemons >= player.recipe.lemons)
+            {
+                Console.WriteLine("You do not have enough lemons to make lemonade.");
+                return false;
+            }
+
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool CheckValidAmountIce()
+        {
+            if (IceCubes >= player.recipe.ice)
+            {
+                Console.WriteLine("You do not have enough ice to make lemonade.");
+                return false;
+            }
+
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool CheckValidAmountCups()
+        {
+            if (Cups >= player.recipe.cup)
+            {
+                Console.WriteLine("You do not have enough cups to make lemonade.");
+                return false;
+            }
+
+            else
+            {
+                return true;
+            }
+        }
+           
 
 
 

@@ -14,10 +14,6 @@ namespace LemonadeStand
         public double IceCubes = .5;
         public double Cups = .2;
         public double Lemons = .10;
-        private double boughtCupsOfSugar;
-        private double boughtIceCubes;
-        private double boughtLemons;
-        private double boughtCups;
 
         public List<string> MenuOptions = new List<string>();
         
@@ -39,12 +35,13 @@ namespace LemonadeStand
         public void BuyCupsOfSugar(Player player)
         {
             Console.WriteLine("How many cups of sugar would you like to buy?");
-            boughtCupsOfSugar = double.Parse(Console.ReadLine());
+            int boughtCupsOfSugar = Int32.Parse(Console.ReadLine());
             double price = boughtCupsOfSugar * CupsOfSugar;
             if (price <= player.wallet.Money)
             {
                 player.inventory.CupsOfSugar += Convert.ToInt32(boughtCupsOfSugar);
                 player.wallet.SubMoneyWallet(price);
+                player.inventory.IncreaseItems(boughtCupsOfSugar,"Sugar");
             }
             else 
             {
@@ -61,12 +58,13 @@ namespace LemonadeStand
         public void BuyIceCubes(Player player)
         {
             Console.WriteLine("How many ice cubes would you like to buy? ");
-            boughtIceCubes = int.Parse(Console.ReadLine());
+            int boughtIceCubes = int.Parse(Console.ReadLine());
             double price = boughtIceCubes * IceCubes;
             if (price <= player.wallet.Money)
             {
                 player.inventory.IceCubes += Convert.ToInt32(boughtIceCubes);
                 player.wallet.SubMoneyWallet(price);
+                player.inventory.IncreaseItems(boughtIceCubes, "Ice Cubes");
             }
             else
             {
@@ -83,12 +81,14 @@ namespace LemonadeStand
         public void BuyLemons(Player player)
         {
             Console.WriteLine("How many lemons would you like to buy?");
-            boughtLemons = int.Parse(Console.ReadLine());
+            int boughtLemons = int.Parse(Console.ReadLine());
             double price = boughtLemons * Lemons;
             if (price <= player.wallet.Money)
             {
                 player.inventory.Lemons += Convert.ToInt32(boughtLemons);
                 player.wallet.SubMoneyWallet(price);
+                player.inventory.IncreaseItems(boughtLemons, "Lemons");
+                
             }
             else
             {
@@ -105,12 +105,13 @@ namespace LemonadeStand
         public void BuyCups(Player player)
         {
             Console.WriteLine("How many cups would you like to buy?");
-            boughtCups = int.Parse(Console.ReadLine());
+            int boughtCups = int.Parse(Console.ReadLine());
             double price = boughtCups * Cups;
             if (price <= player.wallet.Money)
             {
                 player.inventory.Cups += Convert.ToInt32(boughtCups);
                 player.wallet.SubMoneyWallet(price);
+                player.inventory.IncreaseItems(boughtCups, "Cups");
             }
             else 
             {

@@ -8,10 +8,12 @@ namespace LemonadeStand
 {
     class Recipe
     {
-        private int sugar;
-        private int lemons;
-        private int ice;
-        private double cup;
+        public int sugar;
+        public int lemons;
+        public int ice;
+        public double cup;
+        public int cupsPerPitcher = 12;
+        public int pitcherOfLemonade = 0;
 
         public Recipe()
         {
@@ -57,5 +59,17 @@ namespace LemonadeStand
             Console.WriteLine("Let's take a look at your recipe! You have lemons: " + lemons + " cups of sugar: " + sugar +" and " + ice +" ice cubes per pitcher.");
         }
 
+
+        public void CreatePitcher(Inventory inventory)
+        {
+            if (inventory.CheckValidAmountCups() && inventory.CheckValidAmountIce() && inventory.CheckValidAmountLemons() && inventory.CheckValidAmountSugar())
+            {
+                inventory.Lemons -= lemons;
+                inventory.Cups -= cupsPerPitcher;
+                inventory.CupsOfSugar -= sugar;
+                inventory.IceCubes -= ice;
+                pitcherOfLemonade++;
+            }
+        }
     }
 }

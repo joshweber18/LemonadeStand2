@@ -14,12 +14,17 @@ namespace LemonadeStand
         public int profit;
         public Player player = new Player();
         public Store store = new Store();
-        public Day day = new Day();
+        public List<Day> week = new List<Day>();
         int currentDay = 1;
 
         // constructor
-        public Game(Player player)
+        public Game()
         {
+            for(int i = 0; i < 7; i++)
+            {
+                week.Add(new Day());
+            }
+
             Console.WriteLine("Welcome to Lemonade Stand!");
             Console.WriteLine("Press (1) to go to the store. Press (2) to create recipe. Press (3) to check inventory.");
             int input = int.Parse(Console.ReadLine());

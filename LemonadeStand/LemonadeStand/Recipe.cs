@@ -56,7 +56,5 @@ namespace LemonadeStand
         {
             Console.WriteLine("Let's take a look at your recipe! You have lemons: " + lemons + " cups of sugar: " + sugar +" and " + ice +" ice cubes per pitcher.");
         }
-
-
     }
 }

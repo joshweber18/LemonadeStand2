@@ -8,25 +8,38 @@ namespace LemonadeStand
 {
     class Day
     {
-        public string Day1;
-        public string Day2;
-        public string Day3;
-        public string Day4; 
-        public string Day5;
-        public string Day6;
-        public string Day7;
+        // member variables 
 
-        Random random = new Random();
-        Customer customer = new Customer();
-        Weather weather = new Weather();
+        Random random;
+        Customer customer;
+        Weather weather;
+        int randomCustomerNumber;
+
+        // constructor
+        public Day()
+        {
+            random = new Random();
+            weather = new Weather();
+        }
+
+        // member methods
+        public int RandomNumberCustomer()
+        {
+            Random random = new Random();
+            randomCustomerNumber = random.Next(60, 110);
+            return randomCustomerNumber;
+        }
 
         public void Customers()
         {
-            int amountCustomers = random.Next(60, 110);
-            int i = 0;
-            while (i < amountCustomers) ;
-            customer.ChoosingToBuy();
-            i++;
+            RandomNumberCustomer();
+            for (int i = 0; i < randomCustomerNumber; i++)
+            {
+                customer = new Customer();
+                customer.ChoosingToBuy();
+            }
+            
+           
         }
     }
 }

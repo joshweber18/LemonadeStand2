@@ -78,19 +78,19 @@ namespace LemonadeStand
         {
             if(itemToIncrease == "Sugar")
             {
-                CupsOfSugar += amountToIncreaseBy;
+                CupsOfSugar = amountToIncreaseBy;
             }
             else if (itemToIncrease == "Ice Cubes")
             {
-                IceCubes += amountToIncreaseBy;
+                IceCubes = amountToIncreaseBy;
             }
             else if (itemToIncrease == "Lemons")
             {
-                Lemons += amountToIncreaseBy;
+                Lemons = amountToIncreaseBy;
             }
             else if (itemToIncrease == "Cups")
             {
-                Cups += amountToIncreaseBy;
+                Cups = amountToIncreaseBy;
             }
         }
 

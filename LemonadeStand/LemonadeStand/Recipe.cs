@@ -45,7 +45,7 @@ namespace LemonadeStand
 
         public void Ice()
         {
-            Console.WriteLine("How many ice cubes would you like to put in one cup? One pitcher takes 15 cups.");
+            Console.WriteLine("How many ice cubes would you like to put in one cup? One pitcher takes 12 cups.");
             ice = Convert.ToInt32(Console.ReadLine());
         }
 

@@ -12,12 +12,13 @@ namespace LemonadeStand
         public int lemons;
         public int ice;
         public double cup;
-        public int cupsPerPitcher = 12;
-        public int pitcherOfLemonade = 0;
+        public int cupsPerPitcher;
+        public int pitcherOfLemonade;
 
         public Recipe()
         {
-            CreateRecipe();
+            cupsPerPitcher = 12;
+            pitcherOfLemonade = 0;
         }
 
 
@@ -60,7 +61,7 @@ namespace LemonadeStand
             else
             {
                 Console.WriteLine("Invalid input, please enter amount between 0.01 and $1.00");
-                CostCup();
+                return CostCup();
             }
         }
 
@@ -73,7 +74,7 @@ namespace LemonadeStand
 
         public void CreatePitcher(Inventory inventory)
         {
-            if (inventory.CheckValidAmountCups() && inventory.CheckValidAmountIce() && inventory.CheckValidAmountLemons() && inventory.CheckValidAmountSugar())
+            if (inventory.CheckValidAmountCups(cup) && inventory.CheckValidAmountIce(ice) && inventory.CheckValidAmountLemons(lemons) && inventory.CheckValidAmountSugar(sugar))
             {
                 inventory.Lemons -= lemons;
                 inventory.Cups -= cupsPerPitcher;

@@ -9,13 +9,15 @@ namespace LemonadeStand
 
     public class Customer
     {
-        Player player = new Player();
-        Weather weather = new Weather();
+        Player player;
+        Weather weather;
         public int chanceToBuy;
 
         //constructor
         public Customer()
         {
+            player = new Player();
+            weather = new Weather();
             Random random = new Random();
             chanceToBuy = random.Next(50, 70);
         }

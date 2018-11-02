@@ -14,7 +14,7 @@ namespace LemonadeStand
         public int IceCubes;
         public int Cups;
         public int Lemons;
-        Player player = new Player();
+        
 
 
         //constructor
@@ -95,9 +95,9 @@ namespace LemonadeStand
         }
 
 
-        public bool CheckValidAmountSugar()
+        public bool CheckValidAmountSugar(int sugar)
         {
-            if (CupsOfSugar >= player.recipe.sugar)
+            if (CupsOfSugar >= sugar)
             {
                 Console.WriteLine("You do not have enough sugar to make lemonade.");
                 return false;
@@ -109,9 +109,9 @@ namespace LemonadeStand
             }
         }
 
-        public bool CheckValidAmountLemons()
+        public bool CheckValidAmountLemons(int lemons)
         {
-            if (Lemons >= player.recipe.lemons)
+            if (Lemons >= lemons)
             {
                 Console.WriteLine("You do not have enough lemons to make lemonade.");
                 return false;
@@ -123,9 +123,9 @@ namespace LemonadeStand
             }
         }
 
-        public bool CheckValidAmountIce()
+        public bool CheckValidAmountIce(int iceCubes)
         {
-            if (IceCubes >= player.recipe.ice)
+            if (IceCubes >= iceCubes)
             {
                 Console.WriteLine("You do not have enough ice to make lemonade.");
                 return false;
@@ -137,9 +137,9 @@ namespace LemonadeStand
             }
         }
 
-        public bool CheckValidAmountCups()
+        public bool CheckValidAmountCups(double cup)
         {
-            if (Cups >= player.recipe.cup)
+            if (Cups >= cup)
             {
                 Console.WriteLine("You do not have enough cups to make lemonade.");
                 return false;

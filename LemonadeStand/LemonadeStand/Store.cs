@@ -29,13 +29,18 @@ namespace LemonadeStand
             MenuOptions.Add("Ice Cubes: .5 per ice cube.");
             MenuOptions.Add("Lemons: .10 per lemon.");
             MenuOptions.Add("Cups: .2 per cup.");
+            MenuOptions.ForEach(Console.WriteLine);
+            BuyCupsOfSugar(player);
+            BuyIceCubes(player);
+            BuyLemons(player);
+            BuyCups(player);
         }
 
 
         public void BuyCupsOfSugar(Player player)
         {
             Console.WriteLine("How many cups of sugar would you like to buy?");
-            int boughtCupsOfSugar = Int32.Parse(Console.ReadLine());
+            int boughtCupsOfSugar = int.Parse(Console.ReadLine());
             double price = boughtCupsOfSugar * CupsOfSugar;
             if (price <= player.wallet.Money)
             {
@@ -46,13 +51,8 @@ namespace LemonadeStand
             else 
             {
                 Console.WriteLine("You do not have enough money.");
-                BuyIceCubes(player);
             }
 
-            if (boughtCupsOfSugar == 0)
-            {
-                BuyIceCubes(player);
-            }
         }
 
         public void BuyIceCubes(Player player)
@@ -65,16 +65,12 @@ namespace LemonadeStand
                 player.inventory.IceCubes += Convert.ToInt32(boughtIceCubes);
                 player.wallet.SubMoneyWallet(price);
                 player.inventory.IncreaseItems(boughtIceCubes, "Ice Cubes");
+               
             }
             else
             {
                 Console.WriteLine("You do not have enough money.");
-                BuyLemons(player);
-            }
-
-            if (boughtIceCubes == 0)
-            {
-                BuyLemons(player);
+              
             }
         }
 
@@ -88,17 +84,10 @@ namespace LemonadeStand
                 player.inventory.Lemons += Convert.ToInt32(boughtLemons);
                 player.wallet.SubMoneyWallet(price);
                 player.inventory.IncreaseItems(boughtLemons, "Lemons");
-                
             }
             else
             {
                 Console.WriteLine("You do not have enough money.");
-                BuyCups(player);
-            }
-
-            if (boughtLemons == 0)
-            {
-                BuyCups(player);
             }
         }
             
@@ -116,11 +105,6 @@ namespace LemonadeStand
             else 
             {
                 Console.WriteLine("You do not have enough money.");
-            }
-
-            if (boughtCups == 0)
-            {
-              
             }
         }
     }

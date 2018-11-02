@@ -10,23 +10,37 @@ namespace LemonadeStand
     {
         // member variables
 
-        public double money = 50;
+        public double money;
         public int profit;
-        public Player player = new Player();
-        public Store store = new Store();
-        public List<Day> week = new List<Day>();
-        int currentDay = 1;
+        public Player player;
+        public Store store;
+        public List<Day> week;
+        // int currentDay;
 
         // constructor
         public Game()
         {
-            for(int i = 0; i < 7; i++)
+            player = new Player();
+            store = new Store();
+            week = new List<Day>();
+            // currentDay = 1;
+            money = 25;
+        }
+
+        // member methods
+
+
+        public void StartGame()
+        {
+            for (int i = 0; i < 7; i++)
             {
                 week.Add(new Day());
             }
-
+        }
+        public void MainMenu()
+        { 
             Console.WriteLine("Welcome to Lemonade Stand!");
-            Console.WriteLine("Press (1) to go to the store. Press (2) to create recipe. Press (3) to check inventory.");
+            Console.WriteLine("Press (1) to go to the store. Press (2) to create recipe. Press (3) to check inventory. Press (4) to start Game.");
             int input = int.Parse(Console.ReadLine());
             switch (input)
             {
@@ -42,15 +56,12 @@ namespace LemonadeStand
                     player.inventory.AmountLemons();
                     player.inventory.AmountCups();
                     break;
+                case 4:
+                    week[0].Customers();
+
+                    break;
             }
-        }
-
-        // member methods
-
-
-        public void StartGame()
-        {
-
+            MainMenu();
         }
 
 

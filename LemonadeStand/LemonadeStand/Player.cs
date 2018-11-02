@@ -9,13 +9,19 @@ namespace LemonadeStand
     class Player
     {
         // member variables
-        public Inventory inventory = new Inventory();
-        public Recipe recipe = new Recipe();
-        public Wallet wallet = new Wallet();
+        public Inventory inventory;
+        public Recipe recipe;
+        public Wallet wallet;
+        public double totalProfit;
 
         // constructor
 
-
+        public Player()
+        {
+            inventory = new Inventory();
+            recipe = new Recipe();
+            wallet = new Wallet();
+        }
         
 
 
@@ -40,7 +46,16 @@ namespace LemonadeStand
             return inventory.AmountCups();
         }
 
+        public double StartEndMoneyDifference(double startmoney, double endmoney)
+        {
+            double difference = startmoney - endmoney;
+            difference = (startmoney / difference) * 100;
+            return difference;
+        }
 
-
+        public void ProfitTotal(double profit)
+        {
+            totalProfit = -profit;
+        }
     }
 }

@@ -37,6 +37,7 @@ namespace LemonadeStand
                 week.Add(new Day());
             }
         }
+
         public void MainMenu()
         { 
             Console.WriteLine("Welcome to Lemonade Stand!");
@@ -58,7 +59,7 @@ namespace LemonadeStand
                     break;
                 case 4:
                     week[0].Customers();
-
+                    week.RemoveAt(0);
                     break;
             }
             MainMenu();

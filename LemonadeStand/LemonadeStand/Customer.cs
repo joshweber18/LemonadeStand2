@@ -24,28 +24,29 @@ namespace LemonadeStand
 
         //member methods
 
-        public int EffectingToBuy()
+        public int EffectingToBuy(Weather todayWeather)
         {
-            if (weather.weatherOptions[0] == weather.ChooseWeather())  // Rainy
+            
+            if (weather.weatherOptions[0] == todayWeather.todayWeather) // Rainy
             {
                 
                 chanceToBuy -= 10;
                 return chanceToBuy;
             }
 
-            if (weather.weatherOptions[1] == weather.ChooseWeather())  // Partially Sunny
+            if (weather.weatherOptions[1] == todayWeather.todayWeather)  // Partially Sunny
             {
                 chanceToBuy += 5;
                 return chanceToBuy;
             }
 
-            if (weather.weatherOptions[2] == weather.ChooseWeather())  // Hot
+            if (weather.weatherOptions[2] == todayWeather.todayWeather)  // Hot
             {
                 chanceToBuy += 10;
                 return chanceToBuy;
             }
 
-            if (weather.weatherOptions[3] == weather.ChooseWeather())  // Overcast
+            if (weather.weatherOptions[3] == todayWeather.todayWeather)  // Overcast
             {
                 chanceToBuy -= 5;
                 return chanceToBuy;
@@ -56,14 +57,14 @@ namespace LemonadeStand
 
         public void TakeLemonade()
         {
-            player.wallet.AddMoneyWallet(player.recipe.CostCup());
+            player.wallet.AddMoneyWallet(player.recipe.cup);
 
         }
 
-       public void ChoosingToBuy()
+       public void ChoosingToBuy(Weather weather)
         {
             int winningNumber = 50;
-            if (winningNumber <= EffectingToBuy())
+            if (winningNumber <= EffectingToBuy(weather))
             {
                 TakeLemonade();
             }

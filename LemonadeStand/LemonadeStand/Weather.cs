@@ -8,6 +8,7 @@ namespace LemonadeStand
 {
     public class Weather
     {
+        public string todayWeather;
         public string weatherCondition;
         public int temperatureCondition;
         public List<string> weatherOptions = new List<string>();
@@ -20,7 +21,7 @@ namespace LemonadeStand
             weatherOptions.Add("Partially Sunny");
             weatherOptions.Add("Hot");
             weatherOptions.Add("Overcast");
-            ChooseWeather();
+            todayWeather = ChooseWeather();
         }
 
         public string ChooseWeather()

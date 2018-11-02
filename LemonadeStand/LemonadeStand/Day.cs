@@ -36,7 +36,7 @@ namespace LemonadeStand
             for (int i = 0; i < randomCustomerNumber; i++)
             {
                 customer = new Customer();
-                customer.ChoosingToBuy();
+                customer.ChoosingToBuy(weather);
             }
             
            

@@ -14,11 +14,13 @@ namespace LemonadeStand
         public double cup;
         public int cupsPerPitcher;
         public int pitcherOfLemonade;
+       
 
         public Recipe()
         {
             cupsPerPitcher = 12;
             pitcherOfLemonade = 0;
+            cup = 0;
         }
 
 
@@ -26,27 +28,32 @@ namespace LemonadeStand
         public void CreateRecipe()
         {
             Console.WriteLine("Ready to create your recipe? Let's begin.");
-            Lemons();
+            DetermineNumberOfLemons();
+            DetermineNumberOfSugar();
+            DetermineNumberOfIce();
+            CostCup();
+            ShowRecipe();
         }
 
-        public void Lemons()
+        public void DetermineNumberOfLemons()
         {
             Console.WriteLine("How many lemons would you like in one pitcher?");
             lemons = Convert.ToInt32(Console.ReadLine());
-            Sugar();
+           
         }
 
-        public void Sugar()
+        public void DetermineNumberOfSugar()
         {
             Console.WriteLine("How many cups of sugar would you like in one pitcher?");
             sugar = Convert.ToInt32(Console.ReadLine());
-            Ice();
+          
         }
 
-        public void Ice()
+        public void DetermineNumberOfIce()
         {
             Console.WriteLine("How many ice cubes would you like to put in one cup? One pitcher takes 12 cups.");
             ice = Convert.ToInt32(Console.ReadLine());
+          
         }
 
         public double CostCup()

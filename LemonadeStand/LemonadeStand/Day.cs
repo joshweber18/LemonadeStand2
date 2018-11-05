@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Day
+    public class Day
     {
         // member variables 
 
         Random random;
         Customer customer;
-        Weather weather;
+        public Weather weather;
         int randomCustomerNumber;
 
         // constructor
@@ -30,13 +30,13 @@ namespace LemonadeStand
             return randomCustomerNumber;
         }
 
-        public void Customers()
+        public void Customers(Player player)
         {
             GetNumberOfCustomers();
             for (int i = 0; i < randomCustomerNumber; i++)
             {
                 customer = new Customer();
-                customer.ChoosingToBuy(weather);
+                customer.ChoosingToBuy(player, weather);
             }
             
            

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Inventory
+    public class Inventory
     {
         // member variables 
 
@@ -14,6 +14,7 @@ namespace LemonadeStand
         public int IceCubes;
         public int Cups;
         public int Lemons;
+        public int pitcherOfLemonade;
         
 
 
@@ -97,7 +98,7 @@ namespace LemonadeStand
 
         public bool CheckValidAmountSugar(int sugar)
         {
-            if (CupsOfSugar >= sugar)
+            if (CupsOfSugar <= sugar)
             {
                 Console.WriteLine("You do not have enough sugar to make lemonade.");
                 return false;
@@ -111,7 +112,7 @@ namespace LemonadeStand
 
         public bool CheckValidAmountLemons(int lemons)
         {
-            if (Lemons >= lemons)
+            if (Lemons <= lemons)
             {
                 Console.WriteLine("You do not have enough lemons to make lemonade.");
                 return false;
@@ -125,7 +126,7 @@ namespace LemonadeStand
 
         public bool CheckValidAmountIce(int iceCubes)
         {
-            if (IceCubes >= iceCubes)
+            if (IceCubes <= iceCubes)
             {
                 Console.WriteLine("You do not have enough ice to make lemonade.");
                 return false;
@@ -139,7 +140,7 @@ namespace LemonadeStand
 
         public bool CheckValidAmountCups(double cup)
         {
-            if (Cups >= cup)
+            if (Cups <= cup)
             {
                 Console.WriteLine("You do not have enough cups to make lemonade.");
                 return false;

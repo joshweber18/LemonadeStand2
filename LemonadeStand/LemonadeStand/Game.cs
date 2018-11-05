@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Game
+    public class Game
     {
         // member variables
 
-        public double money;
+        public double startmoney;
         public int profit;
         public Player player;
         public Store store;
@@ -24,7 +24,6 @@ namespace LemonadeStand
             store = new Store();
             week = new List<Day>();
             // currentDay = 1;
-            money = 25;
         }
 
         // member methods
@@ -43,9 +42,11 @@ namespace LemonadeStand
             Console.WriteLine("Welcome to Lemonade Stand!");
             Console.WriteLine("Press (1) to go to the store. Press (2) to create recipe. Press (3) to check inventory. Press (4) to start Game.");
             int input = int.Parse(Console.ReadLine());
+            
             switch (input)
             {
                 case 1:
+                    week[0].weather.DisplayWeather();
                     store.Menu(player);
                     break;
                 case 2:
@@ -58,10 +59,19 @@ namespace LemonadeStand
                     player.inventory.AmountCups();
                     break;
                 case 4:
-                    week[0].Customers();
+                    if (player.recipe.CanCreatePitcher(player.inventory))
+                    {
+                        player.recipe.CreatePitcher(player.inventory);
+                    }
+                    startmoney = player.wallet.money;
+                    
+                    week[0].Customers(player);
                     week.RemoveAt(0);
+                    player.StartEndMoneyDifference(startmoney);
+                    
                     break;
             }
+            player.ProfitTotal(profit);
             MainMenu();
         }
 

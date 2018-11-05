@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Player
+    public class Player
     {
         // member variables
         public Inventory inventory;
@@ -46,16 +46,16 @@ namespace LemonadeStand
             return inventory.AmountCups();
         }
 
-        public double StartEndMoneyDifference(double startmoney, double endmoney)
+        public void StartEndMoneyDifference(double startMoney)
         {
-            double difference = startmoney - endmoney;
-            difference = (startmoney / difference) * 100;
-            return difference;
+            double difference = wallet.money - startMoney;
+            Console.WriteLine("Your end of day profit is " + difference);
         }
 
         public void ProfitTotal(double profit)
         {
             totalProfit = -profit;
         }
+        
     }
 }

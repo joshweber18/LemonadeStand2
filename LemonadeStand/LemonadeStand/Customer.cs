@@ -9,17 +9,17 @@ namespace LemonadeStand
 
     public class Customer
     {
-        Player player;
         Weather weather;
         public int chanceToBuy;
+        public int cupAmount;
 
         //constructor
         public Customer()
         {
-            player = new Player();
             weather = new Weather();
             Random random = new Random();
             chanceToBuy = random.Next(50, 70);
+            cupAmount = 0;
         }
 
         //member methods
@@ -55,18 +55,36 @@ namespace LemonadeStand
         }
 
 
-        public void TakeLemonade()
+        public void TakeLemonade(Player player)
         {
-            player.wallet.AddMoneyWallet(player.recipe.cup);
-
+            if (player.inventory.pitcherOfLemonade == 1)
+            {
+                player.wallet.AddMoneyWallet(player.recipe.cup);
+                player.inventory.DecreaseItems(cupAmount, "Cups");
+            }
+            else if (player.inventory.pitcherOfLemonade == 0)
+            {
+                if (player.recipe.CanCreatePitcher(player.inventory))
+                {
+                    player.recipe.CreatePitcher(player.inventory);
+                    player.wallet.AddMoneyWallet(player.recipe.cup);
+                    player.inventory.DecreaseItems(cupAmount, "Cups");
+                }
+                else 
+                {
+                    Console.WriteLine("Not enough stuff dummy");
+                }
+            }
         }
+            
+           
 
-       public void ChoosingToBuy(Weather weather)
+       public void ChoosingToBuy(Player player, Weather weather)
         {
             int winningNumber = 50;
             if (winningNumber <= EffectingToBuy(weather))
             {
-                TakeLemonade();
+                TakeLemonade(player);
             }
         }
     }

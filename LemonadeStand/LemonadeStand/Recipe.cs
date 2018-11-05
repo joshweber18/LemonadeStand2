@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Recipe
+    public class Recipe
     {
         public int sugar;
         public int lemons;
@@ -75,20 +75,28 @@ namespace LemonadeStand
 
         public void ShowRecipe()
         {
-            Console.WriteLine("Let's take a look at your recipe! You have lemons: " + lemons + " cups of sugar: " + sugar +" and " + ice +" ice cubes per pitcher.");
+            Console.WriteLine("Let's take a look at your recipe! You have " + lemons + "  lemons, " + sugar + " cups of sugar and " + ice +" ice cubes per pitcher.");
         }
 
 
         public void CreatePitcher(Inventory inventory)
         {
-            if (inventory.CheckValidAmountCups(cup) && inventory.CheckValidAmountIce(ice) && inventory.CheckValidAmountLemons(lemons) && inventory.CheckValidAmountSugar(sugar))
-            {
                 inventory.Lemons -= lemons;
                 inventory.Cups -= cupsPerPitcher;
                 inventory.CupsOfSugar -= sugar;
                 inventory.IceCubes -= ice;
-                pitcherOfLemonade++;
+                inventory.pitcherOfLemonade++;
+        }
+        public bool CanCreatePitcher(Inventory inventory)
+        {
+            if (inventory.CheckValidAmountCups(cup) && inventory.CheckValidAmountIce(ice) && inventory.CheckValidAmountLemons(lemons) && inventory.CheckValidAmountSugar(sugar))
+            {
+                return true;
+
             }
+            else
+                Console.WriteLine("You do not have enough supplies.");
+                return false;
         }
     }
 }

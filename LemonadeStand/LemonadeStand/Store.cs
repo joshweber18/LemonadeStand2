@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Store
+    public class Store
     {
 
         // member variables 
@@ -14,7 +14,6 @@ namespace LemonadeStand
         public double IceCubes = .5;
         public double Cups = .2;
         public double Lemons = .10;
-
         public List<string> MenuOptions;
 
         //constructor
@@ -46,7 +45,7 @@ namespace LemonadeStand
             Console.WriteLine("How many cups of sugar would you like to buy?");
             int boughtCupsOfSugar = int.Parse(Console.ReadLine());
             double price = boughtCupsOfSugar * CupsOfSugar;
-            if (price <= player.wallet.Money)
+            if (price <= player.wallet.money)
             {
                 player.inventory.CupsOfSugar += Convert.ToInt32(boughtCupsOfSugar);
                 player.wallet.SubMoneyWallet(price);
@@ -64,7 +63,7 @@ namespace LemonadeStand
             Console.WriteLine("How many ice cubes would you like to buy? ");
             int boughtIceCubes = int.Parse(Console.ReadLine());
             double price = boughtIceCubes * IceCubes;
-            if (price <= player.wallet.Money)
+            if (price <= player.wallet.money)
             {
                 player.inventory.IceCubes += Convert.ToInt32(boughtIceCubes);
                 player.wallet.SubMoneyWallet(price);
@@ -83,7 +82,7 @@ namespace LemonadeStand
             Console.WriteLine("How many lemons would you like to buy?");
             int boughtLemons = int.Parse(Console.ReadLine());
             double price = boughtLemons * Lemons;
-            if (price <= player.wallet.Money)
+            if (price <= player.wallet.money)
             {
                 player.inventory.Lemons += Convert.ToInt32(boughtLemons);
                 player.wallet.SubMoneyWallet(price);
@@ -100,7 +99,7 @@ namespace LemonadeStand
             Console.WriteLine("How many cups would you like to buy?");
             int boughtCups = int.Parse(Console.ReadLine());
             double price = boughtCups * Cups;
-            if (price <= player.wallet.Money)
+            if (price <= player.wallet.money)
             {
                 player.inventory.Cups += Convert.ToInt32(boughtCups);
                 player.wallet.SubMoneyWallet(price);

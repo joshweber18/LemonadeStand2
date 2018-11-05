@@ -6,22 +6,15 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Wallet
+    public class Wallet
     {
-        private double money;
+        public double money;
 
-        public double Money
-        {
-            get
-            {
-                return money;
-            }
-        }
 
 
         public Wallet()
         {
-            money = 25;
+            money = 50;
         }
 
         public void AddMoneyWallet(double moneyToAdd)
